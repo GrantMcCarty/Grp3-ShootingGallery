@@ -23,6 +23,10 @@ public class Portal : MonoBehaviour
 
     public void MoveTo(GameObject player, Vector3 pos) {
         // fpsController
-        return;
+        CharacterController controllerScript = player.GetComponent<CharacterController>();
+        controllerScript.enabled = false;
+        player.transform.position = pos;
+        controllerScript.enabled = true;
+        
     }
 }
